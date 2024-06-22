@@ -78,6 +78,7 @@ const App = () => (
           >
             <Projects />
           </MotionBox>
+          <hr /> {/* Line between Projects and Experience */}
           <MotionBox
             component={motion.div}
             variants={itemVariants}
@@ -85,7 +86,7 @@ const App = () => (
           >
             <Experience />
           </MotionBox>
-
+          <hr /> {/* Line between Experience and Skills */}
           <MotionBox
             component={motion.div}
             variants={itemVariants}
@@ -93,15 +94,16 @@ const App = () => (
           >
             <Skills />
           </MotionBox>
-
-        </MotionBox>
-        <MotionBox
+          <hr /> {/* Line between Skills and About */}
+          <MotionBox
             component={motion.div}
             variants={itemVariants}
             sx={{ mb: 4 }} // Add more margin bottom
           >
             <About />
           </MotionBox>
+        </MotionBox>
+        <hr /> {/* Line between About and Contact */}
         <MotionBox
           component={motion.div}
           variants={itemVariants}

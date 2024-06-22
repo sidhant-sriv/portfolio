@@ -14,7 +14,7 @@ const skills = [
 
 const Skills = () => (
   <Box sx={{ margin: "20px auto" }}>
-    <Typography variant="h5" component="h1" gutterBottom>
+    <Typography variant="h4" component="h2" gutterBottom>
       Skills
     </Typography>
     <Stack direction="row" spacing={1} flexWrap="wrap">
@@ -23,7 +23,7 @@ const Skills = () => (
           key={index}
           label={skill}
           variant="outlined"
-          color="primary"
+          color="secondary"
           sx={{ marginBottom: "8px" }}
         />
       ))}

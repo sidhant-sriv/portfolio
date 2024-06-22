@@ -2,8 +2,8 @@ import React from "react";
 import { Typography, Box } from "@mui/material";
 
 const Experience = () => (
-  <Box sx={{ margin: "20px auto" }}>
-    <Typography variant="h5" component="h1" gutterBottom>
+  <Box sx={{ margin: "10px auto" }}>
+    <Typography variant="h4" component="h2" gutterBottom>
       Experience
     </Typography>
     <Typography variant="h6" component="h3" gutterBottom>

@@ -16,8 +16,8 @@ const StyledToolbar = styled(Toolbar)({
 });
 
 const Name = styled(Typography)(({ theme }) => ({
-  fontWeight: 700,
-  background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+  fontWeight: 900,
+  background: `linear-gradient(60deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
   WebkitBackgroundClip: 'text',
   WebkitTextFillColor: 'transparent',
   textAlign: 'center',  // Center text horizontally
@@ -32,11 +32,11 @@ const Header = () => (
   <StyledAppBar position="static">
     <Box maxWidth="lg" width="100%" margin="0 auto">
       <StyledToolbar>
-        <Name variant="h3" component="h1" gutterBottom>
+        <Name variant="h2" component="h1" gutterBottom>
           Sidhant S Srivastava
         </Name>
         <Subtitle variant="subtitle1">
-          Backend Consultant | Machine Learning Enthusiast
+          Backend Developer & Machine Learning Enthusiast
         </Subtitle>
       </StyledToolbar>
     </Box>

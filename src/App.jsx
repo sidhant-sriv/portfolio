@@ -85,13 +85,7 @@ const App = () => (
           >
             <Experience />
           </MotionBox>
-          <MotionBox
-            component={motion.div}
-            variants={itemVariants}
-            sx={{ mb: 4 }} // Add more margin bottom
-          >
-            <About />
-          </MotionBox>
+
           <MotionBox
             component={motion.div}
             variants={itemVariants}
@@ -99,7 +93,15 @@ const App = () => (
           >
             <Skills />
           </MotionBox>
+
         </MotionBox>
+        <MotionBox
+            component={motion.div}
+            variants={itemVariants}
+            sx={{ mb: 4 }} // Add more margin bottom
+          >
+            <About />
+          </MotionBox>
         <MotionBox
           component={motion.div}
           variants={itemVariants}

@@ -12,14 +12,12 @@ const projects = [
     description: "Local RAG system for enhanced information retrieval & generation (20s inference). Integrated Mistral 7b & Palm 2 LLMs for efficient document processing. GPU-accelerated for significant performance gains.",
     link: "https://github.com/sidhant-sriv/lerbut",
     image: "https://i.imgur.com/vJDBVny.jpeg"
-
   },
   {
     title: "Reelgen",
     description: "AI powered reel generator. Backend API built using Node.js and utilizes ffmpeg. Uses LLM API to generate content for video based on user prompts. Generates video content (in ~30s) using stable diffusion models hosted on AWS Sagemaker. Deployed on AWS EC2. (Design by Esha Santosh)",
     link: "https://github.com/sidhant-sriv/reelgen",
-    image: "https://framerusercontent.com/images/JlJspIC5h4WaEwg8DsSDfPfX5yQ.png",
-
+    image: "https://framerusercontent.com/images/JlJspIC5h4WaEwg8DsSDfPfX5yQ.png"
   },
   {
     title: "GDSC VIT Recruitments Portal Backend",
@@ -31,19 +29,19 @@ const projects = [
     title: "Research Consultancy for CMC Vellore",
     description: "Applied machine learning algorithms to analyze patient data for cervical cancer prediction, achieving an accuracy of 98% with a realistic F1 score, significantly improving diagnostic capabilities and potential patient outcomes.",
     link: "https://github.com/sidhant-sriv/Medical-ML",
-    image: "https://riseapps.co/wp-content/uploads/2021/08/Machine-Learning-in-Healthcare-Industry.png.webp"
+    image: "https://riseapps.co/wp-content/uploads/2021/08/Machine-Learning-in-Healthcare-Industry.png"
   },
   {
     title: "Zitch",
     description: "Zitch (inspired by the game Zitch dog from HIMYM) is an app that you can use to log the location of a stray dog. Once enough people have logged the locations of dogs it will start giving alerts about whether there could be a dog in your area.",
     link: "https://github.com/sidhant-sriv/zitch",
-    image: "https://raw.githubusercontent.com/sidhant-sriv/zitch/zitch-app/assets/onBoarding.png"
+    image: "https://i.imgur.com/d5hn8nl.jpeg"
   },
   {
     title: "Geloy Art",
     description: "To recreate the art style of @geloyconcepcion on instagram using Mask RCNN.",
     link: "https://www.kaggle.com/code/sidhantssrivastava/geloy-artstyle",
-    image: "https://www.kaggleusercontent.com/kf/183952064/eyJhbGciOiJkaXIiLCJlbmMiOiJBMTI4Q0JDLUhTMjU2In0..AIUPWudGiWE6Yum7yMeAOg.wcU9dd73BlanqdsZzpdBMLtLG8KRyhAx030yiTOGxnmiFtenXNCmT2e98FBPpPMPkTDcz20AM2Jv58zYomt5U2zLdex42Aws-gPocBDE0MBDt3QrM9ZgPgbFraeAOuCNsLiRvbBTfBHlmN4M1lamfqPtcT1tPvYSbhCE4duRsUMbPkUgAXlPeABuVV8lTwRH4_NJvhkAjVOeKJJPfA_CwrHcG9veBqgyVsz1v4-6PTh1nbTrpopTiMlJt2HVG7fyevjvlrcmNfYTkv1fnx-oyYeMAwntc39d9c0LkOLTaeWDCxX4ZWWIaagUm-45sgenfMwE6QNkjEMVl8KWSDxtp5V3qBINaEVjNLcp9gh0oQ80vA6e4QrcEzJViUnuJQrCRMCL-4Zc4jrZ9ajQelDIKI2E-AxSQK_CFpCVjY7TRxENwq0mLuc9LXFVEtAK05PCCJKvEP8-XyXjWE3xVsITZwLFnbRqdsN4QbDFIW67X8VdoSztldM26D8OrjIZDjDvW_iQ5tFnMDsS5diZiLSJ5LbUwr8SAzwKrMPGsNvxgiWnszouFAg6Q22hsWAtd0dzMpuK_capgDuCxbf3CIfLkE5YI4hmLUbRSBLp0ocFrMvvjB-PrR4XypHqjrEbC3JYS2hVcDovFOTbtq8Cbr6SBw.v159jn9gE8VJno1VGxawzg/__results___files/__results___15_0.png"
+    image: "https://i.imgur.com/LH8KU54.png"
   },
   {
     title: "Ultrachat",
@@ -66,8 +64,8 @@ const Projects = () => {
   };
 
   return (
-    <Box sx={{ margin: '40px auto', }}>
-      <Typography variant="h4" component="h2" gutterBottom >
+    <Box sx={{ margin: '20px auto', width: '100%', maxHeight:'100%' }}>
+      <Typography variant="h4" component="h2" gutterBottom>
         My Projects
       </Typography>
       <Slider {...settings}>
@@ -77,8 +75,8 @@ const Projects = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.95 }}
             >
-              <Box sx={{ p: 6, backgroundColor: 'background.paper', borderRadius: 2, boxShadow: 3, margin: '0 10px' }}>
-                <img src={project.image} alt={project.title} style={{ width: '600px', maxHeight: '800px', borderRadius: 2, margin: '0 auto' }} />
+              <Box sx={{ p: 5, backgroundColor: 'background.paper', borderRadius: 2, boxShadow: 3, margin: '0 10px', height: '800px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center' }}>
+                <img src={project.image} alt={project.title} style={{ width: '100%', height: '600px', borderRadius: 2, objectFit: 'cover', marginBottom: '10px' }} />
                 <Typography variant="h4" component="h2" gutterBottom>
                   {project.title}
                 </Typography>

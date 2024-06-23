@@ -1,34 +1,46 @@
-import React from "react";
-import { Typography, Box, Chip, Stack } from "@mui/material";
+import React from 'react';
+import { 
+  Box, 
+  Typography, 
+  Chip, 
+  Container, 
+  Grid 
+} from '@mui/material';
 
 const skills = [
-  "Python, Django, Flask, Sanic",
-  "DevOps: Docker, Compose, Github CI/CD",
+  "Python",
+  "Django",
+  "Flask",
+  "Sanic",
+  "Docker", "Compose", "Github CI/CD",
   "Node.js",
-  "Cloud: AWS, GCP, DigitalOcean",
-  "Machine Learning: Pytorch, Tensorflow, Langchain, LLamaIndex",
+  "AWS", "GCP", "DigitalOcean",
+  "Pytorch", "Tensorflow", "Langchain", "LLamaIndex",
   "Data Structures and Algorithms",
-  "C/C++, Java",
+  "C/C++",
+  "Java",
   "Unix/Linux",
 ];
 
-const Skills = () => (
-  <Box sx={{ margin: "20px auto" }}>
-    <Typography variant="h4" component="h2" gutterBottom>
-      Skills
-    </Typography>
-    <Stack direction="row" spacing={1} flexWrap="wrap">
-      {skills.map((skill, index) => (
-        <Chip
-          key={index}
-          label={skill}
-          variant="outlined"
-          color="secondary"
-          sx={{ marginBottom: "8px" }}
-        />
-      ))}
-    </Stack>
-  </Box>
-);
+const Skills = () => {
+  return (
+    <Container sx={{ margin: "20px auto" }}>
+      <Typography variant="h4" component="h2" gutterBottom>
+        My Skills
+      </Typography>
+      <Box sx={{ margin: "20px auto" }}>
+        {skills.map((skill, index) => (
+          <Chip
+            key={index}
+            label={skill}
+            sx={{ m: 0.5 }}
+            color="secondary"
+            variant="outlined"
+          />
+        ))}
+      </Box>
+    </Container>
+  );
+};
 
 export default Skills;

@@ -2,8 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
-    font-family: "Roboto Slab", serif;
+body {
+    font-family: Consolas, monospace;
     font-optical-sizing: auto;
     font-weight: 500;
     font-style: normal;

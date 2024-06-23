@@ -6,7 +6,7 @@ import {
   Container,
   Box,
 } from "@mui/material";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Header from "./Header";
 import About from "./About";
 import Experience from "./Experience";
@@ -29,12 +29,27 @@ const darkTheme = createTheme({
 
 const MotionBox = motion(Box);
 
+const pageVariants = {
+  initial: { opacity: 0, scale: 0.9 },
+  in: { 
+    opacity: 1,
+    scale: 1,
+    transition: { duration: 0.5, ease: "easeOut" }
+  },
+  out: { 
+    opacity: 0,
+    scale: 1.1,
+    transition: { duration: 0.5, ease: "easeIn" }
+  }
+};
+
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.2,
+      delayChildren: 0.3,
     },
   },
 };
@@ -47,6 +62,33 @@ const itemVariants = {
     transition: {
       type: "spring",
       stiffness: 100,
+      damping: 10,
+    },
+  },
+};
+
+const headerVariants = {
+  hidden: { y: -50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
+    },
+  },
+};
+
+const contactVariants = {
+  hidden: { y: 50, opacity: 0 },
+  visible: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      type: "spring",
+      stiffness: 100,
+      damping: 20,
     },
   },
 };
@@ -54,64 +96,108 @@ const itemVariants = {
 const App = () => (
   <ThemeProvider theme={darkTheme}>
     <CssBaseline />
-    <Container maxWidth="lg">
-      <Box
-        sx={{
-          minHeight: "100vh",
-          display: "flex",
-          flexDirection: "column",
-          py: 4,
-        }}
+    <AnimatePresence mode="wait">
+      <motion.div
+        initial="initial"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
       >
-        <Header />
-        <MotionBox
-          sx={{ flexGrow: 1, mt: 2 }}
-          component={motion.div}
-          variants={containerVariants}
-          initial="hidden"
-          animate="visible"
-        >
-          <MotionBox
-            component={motion.div}
-            variants={itemVariants}
-            sx={{ mb: 4 }} // Add more margin bottom
+        <Container maxWidth="lg">
+          <Box
+            sx={{
+              minHeight: "100vh",
+              display: "flex",
+              flexDirection: "column",
+              py: 4,
+            }}
           >
-            <Projects />
-          </MotionBox>
-          <hr /> {/* Line between Projects and Experience */}
-          <MotionBox
-            component={motion.div}
-            variants={itemVariants}
-            sx={{ mb: 4 }} // Add more margin bottom
-          >
-            <Experience />
-          </MotionBox>
-          <hr /> {/* Line between Experience and Skills */}
-          <MotionBox
-            component={motion.div}
-            variants={itemVariants}
-            sx={{ mb: 4 }} // Add more margin bottom
-          >
-            <Skills />
-          </MotionBox>
-          <hr /> {/* Line between Skills and About */}
-          <MotionBox
-            component={motion.div}
-            variants={itemVariants}
-            sx={{ mb: 4 }} // Add more margin bottom
-          >
-            <About />
-          </MotionBox>
-        </MotionBox>
-        <MotionBox
-          component={motion.div}
-          variants={itemVariants}
-          sx={{ mt: 4 }} // Add more margin top
-        >
-          <Contact />
-        </MotionBox>
-      </Box>
-    </Container>
+            <MotionBox
+              component={motion.div}
+              variants={headerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <Header />
+            </MotionBox>
+            <MotionBox
+              sx={{ flexGrow: 1, mt: 2 }}
+              component={motion.div}
+              variants={containerVariants}
+              initial="hidden"
+              animate="visible"
+            >
+              <MotionBox
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mb: 4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <About />
+              </MotionBox>
+              <motion.hr
+                variants={{
+                  hidden: { width: "0%" },
+                  visible: { width: "100%" }
+                }}
+                transition={{ duration: 0.5 }}
+              />
+              <MotionBox
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mb: 4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Experience />
+              </MotionBox>
+              <motion.hr
+                variants={{
+                  hidden: { width: "0%" },
+                  visible: { width: "100%" }
+                }}
+                transition={{ duration: 0.5 }}
+              />
+              <MotionBox
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mb: 4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Skills />
+              </MotionBox>
+              <motion.hr
+                variants={{
+                  hidden: { width: "0%" },
+                  visible: { width: "100%" }
+                }}
+                transition={{ duration: 0.5 }}
+              />
+              <MotionBox
+                component={motion.div}
+                variants={itemVariants}
+                sx={{ mb: 4 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Projects />
+              </MotionBox>
+            </MotionBox>
+            <MotionBox
+              component={motion.div}
+              variants={contactVariants}
+              initial="hidden"
+              animate="visible"
+              sx={{ mt: 4 }}
+            >
+              <Contact />
+            </MotionBox>
+          </Box>
+        </Container>
+      </motion.div>
+    </AnimatePresence>
   </ThemeProvider>
 );
 

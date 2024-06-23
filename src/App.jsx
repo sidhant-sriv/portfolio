@@ -179,8 +179,8 @@ const App = () => (
                 component={motion.div}
                 variants={itemVariants}
                 sx={{ mb: 4 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.00 }}
+                whileTap={{ scale: 1.00 }}
               >
                 <Projects />
               </MotionBox>

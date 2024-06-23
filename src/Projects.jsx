@@ -65,7 +65,7 @@ const Projects = () => {
 
   return (
     <Box sx={{ margin: '20px auto', width: '100%', maxHeight:'100%' }}>
-      <Typography variant="h4" component="h2" gutterBottom>
+      <Typography variant="h3" component="h2" gutterBottom>
         My Projects
       </Typography>
       <Slider {...settings}>

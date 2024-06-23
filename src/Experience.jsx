@@ -3,7 +3,7 @@ import { Typography, Box } from "@mui/material";
 
 const Experience = () => (
   <Box sx={{ margin: "10px auto" }}>
-    <Typography variant="h4" component="h2" gutterBottom>
+    <Typography variant="h3" component="h1" gutterBottom>
       Experience
     </Typography>
     <Typography variant="h6" component="h3" gutterBottom>

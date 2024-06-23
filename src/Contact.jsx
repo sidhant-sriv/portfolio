@@ -65,7 +65,7 @@ const Footer = () => (
       </Box>
       <Typography variant="body2" color="text.secondary" align="center">
         {'Copyright © '}
-        <Link color="inherit" href="www.sidsodsud.tech">
+        <Link color="inherit" href="https://www.sidsodsud.tech">
           Sidhant S Srivastava
         </Link>{' '}
         {new Date().getFullYear()}

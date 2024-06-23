@@ -103,7 +103,6 @@ const App = () => (
             <About />
           </MotionBox>
         </MotionBox>
-        <hr /> {/* Line between About and Contact */}
         <MotionBox
           component={motion.div}
           variants={itemVariants}

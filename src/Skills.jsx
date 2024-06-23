@@ -24,8 +24,8 @@ const skills = [
 
 const Skills = () => {
   return (
-    <Container sx={{ margin: "20px auto" }}>
-      <Typography variant="h4" component="h2" gutterBottom>
+    <Container sx={{margin: "20px auto"}} disableGutters>
+      <Typography variant="h3" component="h1" gutterBottom>
         My Skills
       </Typography>
       <Box sx={{ margin: "20px auto" }}>

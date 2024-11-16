@@ -44,7 +44,7 @@ const Hero = () => {
         >
 
           <a
-            href="/resume.pdf"
+            href="https://drive.google.com/file/d/1wx185UVx9dO4C7AhxFp93iJLVwJC9_Vr/view?usp=drive_link"
             className="border border-lilac text-lilac px-4 py-2 rounded hover:bg-lilac hover:text-black transition-colors"
             target="_blank"
             rel="noopener noreferrer"

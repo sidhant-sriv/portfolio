@@ -1,52 +1,36 @@
 // src/components/ui/ProjectCard.jsx
-import { motion } from "framer-motion";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useTheme, useMediaQuery } from '@mui/material';
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, onClick }) => {
+  const theme = useTheme();
+
+  // Adjust card size based on screen size
+  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
+  const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
+  const cardSize = isXs ? '80vw' : isSm ? '150px' : '180px';
+
   return (
-    <motion.div
-      className="bg-white dark:bg-gray-800 rounded shadow"
-      whileHover={{ scale: 1.05 }}
+    <div
+      style={{ width: cardSize, height: cardSize }}
+      onClick={onClick}
+      className="cursor-pointer"
     >
-      <img
-        src={project.image}
-        alt={project.title}
-        className="w-full h-48 object-cover rounded-t"
-      />
-      <div className="p-4">
-        <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-        <p className="text-gray-600 dark:text-gray-400 mb-2">
-          {project.description}
-        </p>
-        <div className="flex flex-wrap space-x-2">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-blue-100 text-blue-800 px-2 py-1 rounded text-xs"
-            >
-              {tag}
-            </span>
-          ))}
+      <motion.div
+        className="bg-black rounded-full shadow-lg p-2 flex flex-col items-center transform transition-transform duration-300 hover:scale-100"
+        style={{ width: '100%', height: '100%' }}
+      >
+        <img
+          src={project.image}
+          alt={project.title}
+          className="w-full h-full object-cover rounded-full transform transition-transform duration-100 hover:scale-110"
+        />
+        <div className="mt-2 text-center">
+          <h3 className="text-md font-bold text-white">{project.title}</h3>
         </div>
-        <div className="mt-4 flex space-x-4">
-          <a
-            href={project.liveLink}
-            className="text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Live Demo
-          </a>
-          <a
-            href={project.repoLink}
-            className="text-blue-500 hover:underline"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Source Code
-          </a>
-        </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </div>
   );
 };
 

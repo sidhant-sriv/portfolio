@@ -2,13 +2,13 @@
 import { useState } from 'react'
 import { Link } from 'react-scroll'
 import { FiMenu, FiX } from 'react-icons/fi'
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa'
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <header className="fixed w-full bg-black text-lilac z-50">
+    <header className="fixed top-0 w-full bg-black text-lilac z-50 shadow-lg">
       <div className="container mx-auto flex justify-between items-center p-4">
         <div className="text-2xl font-bold">
           <a href="/">Sidhant Srivastava</a>
@@ -42,6 +42,18 @@ const Header = () => {
             rel="noopener noreferrer"
           >
             <FaLinkedin size={20} />
+          </a>
+          <a
+            href="mailto:sidhant.sriv@gmail.com"
+            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+          >
+            <FaEnvelope size={20} />
+          </a>
+          <a
+            href="tel:+1234567890"
+            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+          >
+            <FaPhone size={20} />
           </a>
           <button
             className="md:hidden ml-4"
@@ -89,6 +101,12 @@ const Header = () => {
                 className="hover:text-white transition-colors"
               >
                 <FaEnvelope size={24} />
+              </a>
+              <a
+                href="tel:+916366017002"
+                className="hover:text-white transition-colors"
+              >
+                <FaPhone size={24} />
               </a>
             </div>
           </nav>

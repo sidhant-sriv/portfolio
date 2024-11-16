@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography, Box, Grid } from "@mui/material";
 import Slider from "react-slick";
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const About = () => {
@@ -9,20 +9,36 @@ const About = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToShow: 3, // Adjust the number of visible slides
+    slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 960, // For tablets and smaller devices
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600, // For mobile devices
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
   };
 
   const images = [
     "https://i.imgur.com/OTtk4VY.png",
     "https://i.imgur.com/gsal53S.jpeg",
-    "https://i.imgur.com/wrWLiEb.png"
+    "https://i.imgur.com/wrWLiEb.png",
+
   ];
 
   return (
     <Box sx={{ margin: "20px auto", color: "white" }}>
       <Grid container spacing={3}>
-        <Grid item xs={12} md={8}>
+        {/* Text Section */}
+        <Grid item xs={12} md={6}>
           <Box>
             <Typography variant="h3" component="h1" gutterBottom>
               About Me
@@ -42,25 +58,35 @@ const About = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid item xs={12} md={4}>
-          <Box>
-            <Slider {...settings}>
-              {images.map((src, index) => (
+
+        {/* Carousel Section */}
+        <Grid item xs={12} md={6}>
+          <Slider {...settings}>
+            {images.map((src, index) => (
+              <Box
+                key={index}
+                sx={{
+                  padding: "10px",
+                }}
+              >
                 <Box
                   component="img"
                   src={src}
                   alt={`Carousel image ${index + 1}`}
-                  key={index}
                   sx={{
                     width: "100%",
-                    height: "auto",
-                    borderRadius: "8px"
+                    height: "300px",
+                    objectFit: "cover",
+                    borderRadius: "8px",
+                    boxShadow: "0px 2px 8px rgba(0,0,0,0.2)",
                   }}
                 />
-              ))}
-            </Slider>
-          </Box>
+              </Box>
+            ))}
+          </Slider>
         </Grid>
+
+        {/* Spotify Playlist */}
         <Grid item xs={12}>
           <Box>
             <Typography variant="h5" gutterBottom>
@@ -70,7 +96,6 @@ const About = () => {
               src="https://open.spotify.com/embed/playlist/36qriYnFjbfXanl19gbI0z?theme=0"
               width="100%"
               height="380"
-              frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
               style={{ borderRadius: "8px" }}

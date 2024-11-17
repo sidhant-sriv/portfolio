@@ -50,17 +50,18 @@ const Projects = () => {
   };
 
   return (
-    <Box
+     <Box
       sx={{
+        
         position: 'relative',
         width: '100%',
-        height: isXs ? 'auto' : '700px',
+        height: isXs ? 'auto' : '800px',
         margin: '0 auto',
-        padding: isXs ? '20px 0' : '0',
+        padding: isXs ? '25px 0' : '0',
         // Removed overflow: 'hidden' to prevent clipping the modal
       }}
     >
-      <h1 className="text-3xl font-bold mb-10 text-center color-lilac">
+      <h1 id="projects" className="text-3xl font-bold mb-10 text-center color-lilac">
         Projects Showcase
       </h1>
       {/* For extra-small screens, use a linear layout */}

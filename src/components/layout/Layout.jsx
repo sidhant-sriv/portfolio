@@ -6,6 +6,7 @@ import About from "../sections/About";
 import Projects from "../sections/Projects";
 import Skills from "../sections/Skills";
 import Experience from "../sections/Experience";
+import { Analytics } from "@vercel/analytics/react";
 const Layout = () => {
   return (
     <>
@@ -18,6 +19,7 @@ const Layout = () => {
         <Skills />
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 };

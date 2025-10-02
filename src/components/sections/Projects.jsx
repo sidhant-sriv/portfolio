@@ -1,148 +1,36 @@
 // src/components/sections/Projects.jsx
-import React, { useEffect, useState } from 'react';
-import {
-  Box,
-  useMediaQuery,
-  useTheme,
-  Modal,
-  Backdrop,
-  Fade,
-} from '@mui/material';
+import React from 'react';
 import projectsData from '../../data/projectsData';
-import ProjectCard from '../ui/ProjectCard';
-import ProjectModalContent from '../ui/ProjectModalContent';
 
 const Projects = () => {
-  const theme = useTheme();
-
-  // Media queries for responsiveness
-  const isXs = useMediaQuery(theme.breakpoints.down('sm'));
-  const isSm = useMediaQuery(theme.breakpoints.between('sm', 'md'));
-  const isMdUp = useMediaQuery(theme.breakpoints.up('md'));
-
-  // Set radius based on screen size
-  const [radius, setRadius] = useState(300); // Increased radius for more distance
-
-  useEffect(() => {
-    if (isXs) {
-      setRadius(100);
-    } else if (isSm) {
-      setRadius(200);
-    } else if (isMdUp) {
-      setRadius(230); // Increased radius
-    }
-  }, [isXs, isSm, isMdUp]);
-
-  const totalItems = projectsData.length;
-
-  // State for modal
-  const [openModal, setOpenModal] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
-
-  const handleOpenModal = (project) => {
-    setSelectedProject(project);
-    setOpenModal(true);
-  };
-
-  const handleCloseModal = () => {
-    setOpenModal(false);
-    setSelectedProject(null);
-  };
-
   return (
-     <Box
-      sx={{
-        
-        position: 'relative',
-        width: '100%',
-        height: isXs ? 'auto' : '800px',
-        margin: '0 auto',
-        padding: isXs ? '25px 0' : '0',
-        // Removed overflow: 'hidden' to prevent clipping the modal
-      }}
-    >
-      <h1 id="projects" className="text-3xl font-bold mb-10 text-center color-lilac">
-        Projects Showcase
-      </h1>
-      {/* For extra-small screens, use a linear layout */}
-      {isXs ? (
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-          }}
-        >
+    <section id="projects" className="w-full py-24">
+      <div className="max-w-6xl mx-auto px-6">
+        <h2 className="text-3xl font-semibold tracking-tight mb-8">Projects</h2>
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {projectsData.map((project) => (
-            <Box key={project.id} sx={{ marginBottom: '20px' }}>
-              <ProjectCard
-                project={project}
-                onClick={() => handleOpenModal(project)}
-              />
-            </Box>
-          ))}
-        </Box>
-      ) : (
-        /* Radial layout for larger screens */
-        projectsData.map((project, index) => {
-          const angle = (360 / totalItems) * index - 90; // Start from top
-          const radians = (angle * Math.PI) / 180;
-          const x = radius * Math.cos(radians);
-          const y = radius * Math.sin(radians);
-
-          return (
-            <Box
+            <a
               key={project.id}
-              sx={{
-                position: 'absolute',
-                top: `calc(50% + ${y}px)`,
-                left: `calc(50% + ${x}px)`,
-                transform: 'translate(-50%, -50%)',
-              }}
+              href={project.repoLink || project.liveLink || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="subtle-card p-5 hover:shadow-md transition-shadow"
             >
-              <ProjectCard
-                project={project}
-                onClick={() => handleOpenModal(project)}
-              />
-            </Box>
-          );
-        })
-      )}
-
-      {/* Modal for displaying full project details */}
-      <Modal
-        open={openModal}
-        onClose={handleCloseModal}
-        closeAfterTransition
-        BackdropComponent={Backdrop}
-        BackdropProps={{
-          timeout: 500,
-        }}
-      >
-        <Fade in={openModal}>
-          <Box
-            sx={{
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-              width: { xs: '90%', md: '60%' },
-              bgcolor: 'black',
-              boxShadow: 24,
-              p: 4,
-              borderRadius: 2,
-              maxHeight: '90vh',
-              overflowY: 'auto',
-              border: '2px solid'
-            }}
-          >
-            {selectedProject && (
-              <ProjectModalContent project={selectedProject} />
-            )}
-          </Box>
-        </Fade>
-      </Modal>
-    </Box>
+              <div className="aspect-video overflow-hidden rounded-lg mb-4 border border-silver">
+                <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+              </div>
+              <h3 className="text-lg font-semibold mb-1">{project.title}</h3>
+              <p className="text-sm muted mb-3 line-clamp-3">{project.description}</p>
+              <div className="flex flex-wrap gap-2">
+                {project.tags?.slice(0,4).map((tag) => (
+                  <span key={tag} className="px-2 py-1 rounded-full border border-silver text-xs">{tag}</span>
+                ))}
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

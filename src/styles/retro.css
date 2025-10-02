@@ -1,0 +1,63 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f8f8;
+  --text-primary: #000000;
+  --text-secondary: #666666;
+  --accent: #000000;
+  --border: #e0e0e0;
+}
+
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #0a0a0a;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --accent: #ffffff;
+  --border: #222222;
+}
+
+body { font-family: 'Space Mono', monospace; background: var(--bg-primary); color: var(--text-primary); overflow-x: hidden; transition: background 0.4s ease, color 0.4s ease; line-height: 1.6; }
+.container { max-width: 1000px; margin: 0 auto; padding: 60px 0px; min-height: 100vh; }
+.bulb-toggle { position: fixed; top: 40px; right: 40px; width: 40px; height: 55px; cursor: pointer; z-index: 1001; transition: transform 0.3s ease, opacity 0.3s ease; opacity: 0.6; }
+.bulb-toggle:hover { transform: translateY(-3px); opacity: 1; }
+.bulb { fill: var(--text-primary); transition: fill 0.4s ease; }
+header { margin-bottom: 0; padding-bottom: 12px; border-bottom: 1px solid var(--border); transition: border-color 0.4s ease; }
+h1 { font-size: 3.5rem; font-weight: 700; letter-spacing: -2px; margin-bottom: 12px; transition: color 0.4s ease; }
+.subtitle { font-size: 1rem; color: var(--text-secondary); font-weight: 400; letter-spacing: 2px; text-transform: uppercase; transition: color 0.4s ease; }
+.contact-links { margin-top: 24px; display: flex; gap: 24px; flex-wrap: wrap; }
+.contact-links a { color: var(--text-primary); text-decoration: none; font-size: 0.9rem; transition: opacity 0.2s ease; border-bottom: 1px solid transparent; }
+.contact-links a:hover { opacity: 0.6; border-bottom: 1px solid var(--text-primary); }
+.nav-menu { display: flex; gap: 32px; margin-bottom: 0; border-bottom: 1px solid var(--border); transition: border-color 0.4s ease; }
+.nav-btn { font-family: 'Space Mono', monospace; font-size: 0.95rem; padding: 12px 0; background: transparent; border: none; color: var(--text-secondary); cursor: pointer; transition: color 0.2s ease; position: relative; font-weight: 400; }
+.nav-btn::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0; height: 2px; background: var(--text-primary); transition: width 0.3s ease; }
+.nav-btn:hover, .nav-btn.active { color: var(--text-primary); }
+.nav-btn.active::after { width: 100%; }
+.content-section { display: none; animation: fadeIn 0.6s ease; }
+.content-section.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.card { background: transparent; padding: 32px 0; margin-bottom: 32px; border-bottom: 1px solid var(--border); transition: all 0.3s ease; }
+.card:last-child { border-bottom: none; }
+.card:hover { padding-left: 16px; }
+.card-title { font-size: 1.5rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; transition: color 0.4s ease; }
+.card-subtitle { font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 16px; transition: color 0.4s ease; }
+.card-content { font-size: 0.95rem; line-height: 1.7; color: var(--text-secondary); transition: color 0.4s ease; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 16px; }
+.skill-tag { background: transparent; color: var(--text-primary); padding: 8px 16px; border: 1px solid var(--border); font-size: 0.85rem; transition: all 0.2s ease; font-weight: 400; }
+.skill-tag:hover { background: var(--text-primary); color: var(--bg-primary); }
+ul { list-style: none; margin-left: 0; }
+li { margin-bottom: 12px; position: relative; padding-left: 20px; color: var(--text-secondary); transition: color 0.4s ease; }
+li::before { content: '—'; position: absolute; left: 0; color: var(--text-primary); }
+.section-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+@media (max-width: 768px) {
+  .container { padding: 40px 24px; }
+  h1 { font-size: 2.5rem; }
+  .nav-menu { gap: 20px; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .nav-btn { font-size: 0.85rem; white-space: nowrap; }
+  .bulb-toggle { top: 30px; right: 30px; }
+  .card:hover { padding-left: 0; }
+}
+* { transition-property: background, color, border-color, fill; transition-duration: 0.4s; transition-timing-function: ease; }
+.nav-btn, .nav-btn::after, .contact-links a, .skill-tag, .bulb-toggle { transition-duration: 0.2s, 0.3s; }
+

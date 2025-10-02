@@ -5,23 +5,40 @@ import React from 'react';
 const experiences = [
   {
     id: 1,
-    title: 'Backend Consultant',
-    company: 'Stealth Startup',
-    date: 'June 2024 - Present',
+    title: 'SDE Intern',
+    company: 'Clearfeed.ai',
+    date: 'May 2025 - July 2025',
     location: 'Remote',
     description:
-      'Working on backend development projects using Python and LangChain, contributing to scalable systems and APIs.',
+      'Shipped Slack Connect integration and revamped pricing page, lifting user engagement by 15%. Overhauled CI/CD to cut build times and boost deployment frequency by 80%; fixed critical customer issues to improve stability.',
   },
   {
     id: 2,
-    title: 'Computer Science and Engineering Student',
-    company: 'Vellore Institute of Technology, Vellore',
-    date: '2020 - Present',
+    title: 'Part-Time Backend Developer',
+    company: 'Loopedin.ai',
+    date: 'July 2024 - April 2025',
+    location: 'Remote',
+    description:
+      'Improved agentic AI workflow platform for complex multi-step tasks. Built and maintained API integrations with Gmail and JIRA to automate pipelines, reducing manual data entry by 90%.',
+  },
+  {
+    id: 3,
+    title: 'B.Tech, Computer Science Engineering',
+    company: 'Vellore Institute of Technology (VIT), Vellore',
+    date: '2022 - 2026',
     location: 'Vellore, India',
     description:
-      'Pursuing a degree in Computer Science and Engineering, focusing on machine learning and backend development.',
+      'Coursework in data structures, algorithms, and distributed systems; inner core tech team at GDSC VIT.',
   },
-  // Add more experiences as needed
+  {
+    id: 4,
+    title: 'Top Coder @ VIT University',
+    company: 'VIT, Competitive Programming',
+    date: '2025',
+    location: 'Vellore, India',
+    description:
+      'Ranked in the top 2% among 12,000+ students across all VIT campuses.',
+  },
 ];
 
 const Experience = () => {
@@ -30,7 +47,7 @@ const Experience = () => {
       <h2 className="text-3xl font-bold mb-12 text-center">Experience Timeline</h2>
       <div className="relative wrap overflow-hidden p-4 h-full">
         {/* Vertical Timeline Line */}
-        <div className="absolute border-2 border-lilac h-full left-1/2 transform -translate-x-1/2"></div>
+        <div className="absolute border-2 border-lilac h-full left-1/2 transform -translate-x-1/2" />
 
         {experiences.map((exp, index) => (
           <div
@@ -39,7 +56,7 @@ const Experience = () => {
               index % 2 === 0 ? 'flex-row-reverse' : 'flex-row'
             }`}
           >
-            <div className="order-1 w-5/12"></div>
+            <div className="order-1 w-5/12" />
             <div className="z-20 flex items-center order-1 bg-lilac shadow-xl w-8 h-8 rounded-full">
               <span className="mx-auto font-semibold text-black">{index + 1}</span>
             </div>

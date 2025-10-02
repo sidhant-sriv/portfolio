@@ -8,19 +8,19 @@ const Header = () => {
   const [navOpen, setNavOpen] = useState(false)
 
   return (
-    <header className="fixed top-0 w-full bg-black text-lilac z-50 shadow-lg">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <div className="text-2xl font-bold">
-          <a href="/">Sidhant Srivastava</a>
+    <header className="fixed top-0 w-full z-50">
+      <div className="glass mx-auto flex justify-between items-center px-6 py-3 rounded-b-2xl max-w-6xl">
+        <div className="text-xl font-semibold tracking-tight">
+          <a href="/" className="hover:opacity-80 transition-opacity">Sidhant Srivastava</a>
         </div>
-        <nav className="hidden md:flex space-x-8">
+        <nav className="hidden md:flex items-center gap-8 text-sm">
           {['Home', 'About', 'Projects', 'Skills'].map((section) => (
             <Link
               key={section}
               to={section.toLowerCase()}
               smooth={true}
               duration={500}
-              className="cursor-pointer hover:text-white transition-colors"
+              className="cursor-pointer hover:opacity-80 transition-opacity"
             >
               {section}
             </Link>
@@ -29,7 +29,7 @@ const Header = () => {
         <div className="flex items-center">
           <a
             href="https://github.com/sidhant-sriv"
-            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+            className="hidden md:inline-block mx-2 hover:opacity-80 transition-opacity"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -37,7 +37,7 @@ const Header = () => {
           </a>
           <a
             href="https://linkedin.com/in/sidhant-srivastava"
-            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+            className="hidden md:inline-block mx-2 hover:opacity-80 transition-opacity"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -45,13 +45,13 @@ const Header = () => {
           </a>
           <a
             href="mailto:sidhant.sriv@gmail.com"
-            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+            className="hidden md:inline-block mx-2 hover:opacity-80 transition-opacity"
           >
             <FaEnvelope size={20} />
           </a>
           <a
             href="tel:+1234567890"
-            className="hidden md:inline-block mx-2 hover:text-white transition-colors"
+            className="hidden md:inline-block mx-2 hover:opacity-80 transition-opacity"
           >
             <FaPhone size={20} />
           </a>
@@ -65,7 +65,7 @@ const Header = () => {
       </div>
       {/* Mobile Menu */}
       {navOpen && (
-        <div className="md:hidden bg-black text-lilac">
+        <div className="md:hidden glass mx-4 rounded-2xl mt-2">
           <nav className="flex flex-col items-center space-y-6 py-6">
             {['Home', 'About', 'Projects', 'Skills'].map((section) => (
               <Link
@@ -73,7 +73,7 @@ const Header = () => {
                 to={section.toLowerCase()}
                 smooth={true}
                 duration={500}
-                className="cursor-pointer hover:text-white text-xl"
+                className="cursor-pointer hover:opacity-80 text-xl"
                 onClick={() => setNavOpen(false)}
               >
                 {section}
@@ -82,7 +82,7 @@ const Header = () => {
             <div className="flex space-x-4 mt-4">
               <a
                 href="https://github.com/sidhant-sriv"
-                className="hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -90,7 +90,7 @@ const Header = () => {
               </a>
               <a
                 href="https://linkedin.com/in/sidhant-srivastava"
-                className="hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -98,13 +98,13 @@ const Header = () => {
               </a>
               <a
                 href="mailto:sidhant.sriv@gmail.com"
-                className="hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
               >
                 <FaEnvelope size={24} />
               </a>
               <a
                 href="tel:+916366017002"
-                className="hover:text-white transition-colors"
+                className="hover:opacity-80 transition-opacity"
               >
                 <FaPhone size={24} />
               </a>

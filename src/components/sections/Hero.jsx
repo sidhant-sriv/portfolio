@@ -14,63 +14,45 @@ const Hero = () => {
   ];
 
   return (
-    <section
-      id="home"
-      className="h-screen flex flex-col items-center justify-center bg-black relative overflow-hidden"
-    >
-      {/* Text Section */}
-      <div className="text-center text-lilac z-10">
-        <motion.h1
-          className="text-5xl font-bold mb-4"
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-        >
-          Hi, I'm Sidhant Srivastava
-        </motion.h1>
-        <motion.h2
-          className="text-2xl mb-6"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5 }}
-        >
-          {text}
-          <span className="cursor">|</span>
-        </motion.h2>
-        <motion.div
-          className="space-x-4"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1 }}
-        >
-
-          <a
-            href="https://drive.google.com/file/d/1wx185UVx9dO4C7AhxFp93iJLVwJC9_Vr/view?usp=drive_link"
-            className="border border-lilac text-lilac px-4 py-2 rounded hover:bg-lilac hover:text-black transition-colors"
-            target="_blank"
-            rel="noopener noreferrer"
+    <section id="home" className="relative overflow-hidden">
+      <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
+        <div className="subtle-card p-10 md:p-16">
+          <motion.h1
+            className="text-4xl md:text-6xl font-semibold tracking-tight mb-4"
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
           >
-            Download Resume
-          </a>
-        </motion.div>
-      </div>
-
-      {/* Image Section */}
-      <div className="absolute inset-0 flex justify-center items-center -z-10">
-        <div className="grid grid-cols-3 gap-4">
-          {images.map((src, index) => (
-            <motion.img
-              key={index}
-              src={src}
-              alt={`Hero image ${index + 1}`}
-              className="w-40 h-40 rounded-full object-cover shadow-lg"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{
-                delay: index * 0.3,
-                duration: 0.6,
-              }}
-            />
-          ))}
+            Sidhant Srivastava
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-2xl muted mb-8"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+          >
+            Backend Developer · AI/ML · Competitive Programmer
+          </motion.p>
+          <motion.div
+            className="flex flex-wrap gap-3"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.35 }}
+          >
+            <a
+              href="mailto:sidhant.sriv@gmail.com"
+              className="px-5 py-2 rounded-full bg-graphite text-white hover:opacity-90 transition"
+            >
+              Get in touch
+            </a>
+            <a
+              href="https://drive.google.com/file/d/1wx185UVx9dO4C7AhxFp93iJLVwJC9_Vr/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2 rounded-full border border-silver hover:bg-white transition"
+            >
+              View resume
+            </a>
+          </motion.div>
         </div>
       </div>
     </section>

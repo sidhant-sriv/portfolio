@@ -5,5 +5,17 @@
 
 /* Custom styles */
 body {
-  @apply bg-black text-lilac font-sans;
+  @apply bg-porcelain text-graphite font-sans antialiased;
+}
+
+.glass {
+  @apply bg-white/70 backdrop-blur-md border border-silver/60;
+}
+
+.subtle-card {
+  @apply bg-white border border-silver rounded-2xl shadow-[0_1px_0_0_rgba(0,0,0,0.04)];
+}
+
+.muted {
+  @apply text-aluminum;
 }

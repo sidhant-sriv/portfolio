@@ -1,15 +1,9 @@
 // src/App.jsx
-import { BrowserRouter as Router } from 'react-router-dom'
-import Layout from './components/layout/Layout'
-import { ThemeProvider } from './context/ThemeContext'
+import RetroPortfolio from './components/RetroPortfolio'
 
 function App() {
   return (
-    <ThemeProvider>
-      <Router>
-        <Layout />
-      </Router>
-    </ThemeProvider>
+    <RetroPortfolio />
   )
 }
 

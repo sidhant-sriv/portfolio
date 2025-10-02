@@ -3,12 +3,21 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="manifest" href="/manifest.json" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#00ff88" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Sidhant's Portfolio" />
+    
+    <!-- Font Preloads -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
-    <title>Sidhant's Portfolio</title>
+    <title>Sidhant Srivastava - Software Engineer & Competitive Programmer | VIT University Top Coder</title>
     
     <!-- Primary meta description -->
     <meta name="description" content="Discover Sidhant Srivastava's impressive portfolio showcasing his expertise in SDE, competitive programming, and tech projects. Explore his educational background, achievements, and experience to see how he can contribute to your tech team." />
@@ -25,6 +34,37 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Sidhant Srivastava's Portfolio" />
     <meta name="twitter:description" content="Explore Sidhant Srivastava's comprehensive portfolio, where you'll find a showcase of his technical skills, programming expertise, and innovative projects. Learn more about his educational background and experience to see how he can be an asset to your tech organization." />
+    
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Sidhant Srivastava",
+      "jobTitle": "Software Engineer",
+      "url": "https://sidhant.vercel.app",
+      "sameAs": [
+        "https://www.linkedin.com/in/sidhant-srivastava-41803620b",
+        "https://github.com/sidhant-sriv"
+      ],
+      "alumniOf": {
+        "@type": "EducationalOrganization",
+        "name": "Vellore Institute of Technology"
+      },
+      "worksFor": [
+        {
+          "@type": "Organization",
+          "name": "Clearfeed.ai"
+        },
+        {
+          "@type": "Organization", 
+          "name": "Loopedin.ai"
+        }
+      ],
+      "email": "sidhant.sriv@gmail.com",
+      "telephone": "+91-63660-17002"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

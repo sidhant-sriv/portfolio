@@ -48,12 +48,7 @@ const RetroPortfolio = () => {
 
       <header>
         <h1>Sidhant Srivastava</h1>
-        <p className="subtitle">Software Engineer & Competitive Programmer</p>
-        <div className="intro-text">
-          <p>Welcome to my digital portfolio! I'm a passionate software engineer currently pursuing my B.Tech in Computer Science Engineering at Vellore Institute of Technology (VIT). With a strong foundation in competitive programming, software development, and AI/ML technologies, I bring a unique blend of technical expertise and problem-solving skills to every project.</p>
-          <p>My journey in technology has been marked by consistent excellence - from ranking in the top 2% of over 12,000 students in competitive programming to leading technical initiatives at Google Developer Student Club. I have hands-on experience working with modern technologies including React, Node.js, Python, and various cloud platforms, gained through internships at innovative companies like Clearfeed.ai and Loopedin.ai.</p>
-          <p>I'm passionate about building scalable applications, optimizing development workflows, and contributing to open-source projects. My goal is to leverage technology to solve real-world problems and create meaningful impact in the software development community.</p>
-        </div>
+        <p className="subtitle">Software Engineer</p>
         <div className="contact-links">
           <a href="mailto:sidhant.sriv@gmail.com">Email</a>
           <a href="https://www.linkedin.com/in/sidhant-srivastava-41803620b" target="_blank" rel="noreferrer">LinkedIn</a>
@@ -72,47 +67,30 @@ const RetroPortfolio = () => {
 
       <div id="about" className={`content-section ${active === 'about' ? 'active' : ''}`}>
         <div className="card">
-          <div className="card-title">About Sidhant Srivastava</div>
-          <div className="card-content">
-            <p>I am a passionate software engineer and competitive programmer currently pursuing my B.Tech in Computer Science Engineering at Vellore Institute of Technology (VIT). My journey in technology began with a deep fascination for problem-solving and algorithmic thinking, which led me to excel in competitive programming and secure a position among the top 2% of over 12,000 students across all VIT campuses.</p>
-            <p>My expertise spans across multiple domains including software development, artificial intelligence, machine learning, and full-stack development. I have hands-on experience working with modern technologies like React, Node.js, Python, and various cloud platforms. Through my internships at Clearfeed.ai and Loopedin.ai, I have gained valuable industry experience in building scalable applications and improving development workflows.</p>
-            <p>As an active member of the Google Developer Student Club at VIT, I lead the Inner Core Tech Team where I mentor 50+ members and organize hackathons that attract 200+ participants. This leadership role has helped me develop strong communication skills and the ability to guide teams toward successful project completion.</p>
-          </div>
-        </div>
-        <div className="card">
           <div className="card-title">Education</div>
           <div className="card-subtitle">Vellore Institute of Technology (VIT) • 2022 - 2026</div>
-          <div className="card-content">B.Tech in Computer Science Engineering with focus on software development, algorithms, and artificial intelligence.</div>
+          <div className="card-content">B.Tech in Computer Science Engineering</div>
         </div>
         <div className="card">
           <div className="card-title">Achievements</div>
           <div className="card-subtitle">Top Coder @ VIT University 2025</div>
-          <div className="card-content">Ranked in the top 2% of over 12,000 students in competitive programming across all VIT campuses, demonstrating exceptional problem-solving skills and algorithmic thinking.</div>
+          <div className="card-content">Ranked in the top 2% of over 12,000 students in competitive programming across all VIT campuses.</div>
         </div>
         <div className="card">
           <div className="card-title">Leadership</div>
           <div className="card-subtitle">Google Developer Student Club, VIT • 2023 - Present</div>
-          <div className="card-content">Inner Core Tech Team — Led ML/backend projects for 50+ members; organized 3 hackathons with 200+ participants, fostering innovation and technical excellence in the developer community.</div>
+          <div className="card-content">Inner Core Tech Team — Led ML/backend projects for 50+ members; organized 3 hackathons with 200+ participants.</div>
         </div>
       </div>
 
       <div id="experience" className={`content-section ${active === 'experience' ? 'active' : ''}`}>
         <div className="card">
-          <div className="card-title">Professional Experience</div>
-          <div className="card-content">
-            <p>My professional journey showcases a strong foundation in software development, with hands-on experience in both startup and enterprise environments. I have worked on cutting-edge technologies including AI/ML platforms, workflow automation, and modern web applications.</p>
-          </div>
-        </div>
-        <div className="card">
           <div className="card-title">Clearfeed.ai</div>
           <div className="card-subtitle">SDE Intern • May 2025 - July 2025</div>
           <div className="card-content">
-            <p>During my internship at Clearfeed.ai, I contributed to significant product improvements and infrastructure optimization. My key achievements include:</p>
             <ul>
-              <li>Engineered Slack Connect integration and revamped pricing page, resulting in a 15% increase in user engagement and conversion rates</li>
-              <li>Overhauled the entire CI/CD pipeline, cutting build times by 60% and boosting deployment frequency by 80%, enabling faster feature delivery</li>
-              <li>Collaborated with cross-functional teams to implement new features and improve system reliability</li>
-              <li>Participated in code reviews and mentored junior developers on best practices</li>
+              <li>Engineered Slack Connect integration and revamped pricing page, +15% engagement</li>
+              <li>Overhauled CI/CD, cutting build times and boosting deployment frequency by 80%</li>
             </ul>
           </div>
         </div>
@@ -120,12 +98,9 @@ const RetroPortfolio = () => {
           <div className="card-title">Loopedin.ai</div>
           <div className="card-subtitle">Part-Time Backend Developer • July 2024 - April 2025</div>
           <div className="card-content">
-            <p>At Loopedin.ai, I worked on building an innovative agentic AI workflow platform designed to handle complex multi-step tasks efficiently. My contributions include:</p>
             <ul>
-              <li>Improved the core agentic AI workflow platform architecture for handling complex multi-step tasks and decision trees</li>
-              <li>Built robust Gmail and JIRA integrations using REST APIs and webhooks, reducing manual data entry by 90%</li>
-              <li>Implemented automated workflow triggers and conditional logic for seamless task execution</li>
-              <li>Optimized database queries and API response times to improve platform performance</li>
+              <li>Improved agentic AI workflow platform for complex multi-step tasks</li>
+              <li>Built Gmail and JIRA integrations, reducing manual data entry by 90%</li>
             </ul>
           </div>
         </div>

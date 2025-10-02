@@ -5,7 +5,7 @@ import skillsData from '../data/skillsData'
 
 const RetroPortfolio = () => {
   const [active, setActive] = useState('about')
-  const [theme, setTheme] = useState('light')
+  const [theme, setTheme] = useState('dark')
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme)
